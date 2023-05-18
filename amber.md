@@ -1,1 +1,10 @@
 # Amber
+
+<meta http-equiv="origin-trial" content="Akj0rg0bmiFdTNxsCGM4MT8W+r9DTXbf/lgFr3kIOD/uO4a1sFvQJc63TsGj7yM+JtlvsJyjIPZL5VIR+9AjEAwAAABleyJvcmlnaW4iOiJodHRwczovL2Nyb3dkZmFyZS5uZXQ6NDQzIiwiZmVhdHVyZSI6IlNwZWN1bGF0aW9uUnVsZXNQcmVmZXRjaEZ1dHVyZSIsImV4cGlyeSI6MTY5NDEzMTE5OX0=">
+
+<p id="performance"></p>
+<script>
+window.addEventListener('load', () => {
+  document.getElementById('performance').textContent = JSON.stringify(performance.getEntriesByType('navigation')[0], null, 4);
+});
+</script>
