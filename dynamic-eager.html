@@ -20,8 +20,8 @@
 <script defer>
 async function batchQuery() {
   let params = new URLSearchParams();
-  let (let link of document.links) {
-    if (urlsToSuggest.length > 10) break;
+  for (let link of document.links) {
+    if (params.size > 10) break;
     let url = new URL(link.href);
     if (url.origin === self.origin) params.append('url', url);
   }
