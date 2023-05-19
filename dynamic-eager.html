@@ -23,7 +23,7 @@ async function batchQuery() {
     if (url.origin === self.origin) params.append('url', url);
   }
   // <script src> would be nice.
-  let text = await fetch('/__sr/in-cache.json').then(r => r.text());
+  let text = await fetch('/__sr/in-cache.json?' + params).then(r => r.text());
   let sc = document.createElement('script');
   sc.type = 'speculationrules';
   sc.textContent = text;
