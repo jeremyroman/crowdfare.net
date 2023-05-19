@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<meta http-equiv="origin-trial" content="Akj0rg0bmiFdTNxsCGM4MT8W+r9DTXbf/lgFr3kIOD/uO4a1sFvQJc63TsGj7yM+JtlvsJyjIPZL5VIR+9AjEAwAAABleyJvcmlnaW4iOiJodHRwczovL2Nyb3dkZmFyZS5uZXQ6NDQzIiwiZmVhdHVyZSI6IlNwZWN1bGF0aW9uUnVsZXNQcmVmZXRjaEZ1dHVyZSIsImV4cGlyeSI6MTY5NDEzMTE5OX0=">
+<script type="speculationrules">
+{"prefetch": [{"source": "document", "where": {"href_matches": "/*\\?*#*"}, "eagerness": "moderate"}]}
+</script>
+
+<h1>Crowdfare</h1>
+
+<p>This is a site dedicated to collecting small amounts of money from users all around the world. Or a demo site.
+  
+<p>This version immediately queries the cache for up to 10 links, and looks to see what they
+
+<ul>
+  <li><a href="amber.html">Amber</a></li>
+  <li><a href="beryl.html">Beryl</a></li>
+  <li><a href="coral.html">Coral</a></li>
+</ul>
+
+<script defer>
+async function batchQuery() {
+  let params = new URLSearchParams();
+  let (let link of document.links) {
+    if (urlsToSuggest.length > 10) break;
+    let url = new URL(link.href);
+    if (url.origin === self.origin) params.append('url', url);
+  }
+  // <script src> would be nice.
+  let text = await fetch('/__sr/in-cache.json').then(r => r.text());
+  let sc = document.createElement('script');
+  sc.type = 'speculationrules';
+  sc.textContent = text;
+  document.head.appendChild(sc);
+}
+</script>
+<button onclick="batchQuery()">Batch Query</button>
